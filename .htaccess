@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^avatar.png$ avatar.php

@@ -1,2 +1,7 @@
 RewriteEngine On
-RewriteRule ^avatar.png$ avatar.php
+
+RewriteRule ^avatar.png$ avatar.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule !^avatar\.php$ /avatar.php [L]
+

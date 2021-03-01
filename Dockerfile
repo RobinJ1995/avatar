@@ -19,4 +19,8 @@ RUN docker-php-ext-configure gd \
     --with-freetype-dir
 RUN docker-php-ext-install gd
 
+# Apache prefork config
+RUN a2enmod mpm_prefork
+COPY Docker/mpm_prefork.conf /etc/apache2/mods-enabled/mpm_prefork.conf
+
 COPY . /var/www/html/
